@@ -11,5 +11,6 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.name == "Kingdom":
 		print("enemy entered kingdom")
+		hurt.emit(100)
 	
 	#if tool == hit_component.current_tool:
