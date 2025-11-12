@@ -1,6 +1,12 @@
 class_name Globals
 extends Node
 
+enum EnemyTypes {
+	CIRCLE,
+	TRIANGLE,
+	SQUARE,
+}
+
 @warning_ignore("unused_signal")
 signal goldChanged(newGold)
 @warning_ignore("unused_signal")

@@ -35,7 +35,7 @@ shape = SubResource("RectangleShape2D_vkkl7")
 [node name="Tanks" type="Node2D" parent="."]
 
 [node name="Tank" parent="Tanks" instance=ExtResource("3_x16ei")]
-position = Vector2(696, 379)
+position = Vector2(517, 282)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_mpvby")
@@ -44,18 +44,18 @@ navigation_polygon = SubResource("NavigationPolygon_mpvby")
 unique_name_in_owner = true
 position = Vector2(-178, 354)
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="EnemySpawnPoint" type="CollisionShape2D" parent="Area2D"]
-unique_name_in_owner = true
-position = Vector2(1334, 308)
-shape = SubResource("CircleShape2D_k2tbn")
-
 [node name="EnemyBase" type="Node2D" parent="."]
 script = ExtResource("3_k2tbn")
 
 [node name="Timer" type="Timer" parent="EnemyBase"]
 wait_time = 0.5
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="EnemyBase"]
+
+[node name="EnemySpawnPoint" type="CollisionShape2D" parent="EnemyBase/Area2D"]
+unique_name_in_owner = true
+position = Vector2(1334, 308)
+shape = SubResource("CircleShape2D_k2tbn")
 
 [connection signal="timeout" from="EnemyBase/Timer" to="EnemyBase" method="_on_timer_timeout"]

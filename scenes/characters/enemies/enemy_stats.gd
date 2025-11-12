@@ -1,11 +1,14 @@
-class_name EnemyStats
 extends Resource
+class_name EnemyStats
 
 @export var name: String
-@export var health: int
+@export var type: Globals.EnemyTypes
 @export var speed: float
+@export var hp: int
 
-func _init(p_name = "Enemy", p_health = 0, p_speed = 100.0):
-	name = p_name
-	health = p_health
-	speed = p_speed
+func get_sprite_texture():
+	match type:
+		Globals.EnemyTypes.CIRCLE:
+			return load("res://assets/characters/slime.png")
+		Globals.EnemyTypes.TRIANGLE:
+			return load("res://assets/characters/triangle.png")
