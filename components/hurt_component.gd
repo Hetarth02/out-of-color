@@ -10,4 +10,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name == "Kingdom":
 		print("enemy entered kingdom")
 		await get_tree().create_timer(1.0).timeout
-		hurt.emit(100)
+		get_parent().queue_free()

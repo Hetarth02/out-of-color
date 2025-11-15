@@ -29,4 +29,5 @@ func on_hurt(hit_damage: int) -> void:
 	damage_component.apply_damage(hit_damage)
 
 func on_max_damage_reached() -> void:
+	Global.add_to_points(stats.hp)
 	queue_free()

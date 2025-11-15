@@ -35,6 +35,7 @@ var draw_range := true
 #Attacking
 var rotates := true
 var current_target = null
+
 #Stats
 var attack_speed := 1.0:
 	set(value):
@@ -56,14 +57,6 @@ func _ready() -> void:
 	#color_button.icon = image
 
 func _process(_delta):
-	if not deployed:
-		@warning_ignore("standalone_ternary")
-		colliding() if $CollisionArea.has_overlapping_areas() else not_colliding()
-	elif rotates:
-		@warning_ignore("standalone_ternary")
-		#print("current_target")
-		#sprite_2d.look_at(current_target.position) if is_instance_valid(current_target) else try_get_closest_target()
-		
 	if current_bullet != last_bullet:
 		color_button.texture_normal = bullets[current_bullet]
 		last_bullet = current_bullet
@@ -71,21 +64,6 @@ func _process(_delta):
 func _draw():
 	if draw_range:
 		draw_circle(Vector2(0,0), attack_range, "3ccd50a9", false, 1, true)
-
-func set_placeholder():
-	modulate = Color("6eff297a")
-
-func build():
-	deployed = true
-	modulate = Color.WHITE
-
-func colliding():
-	can_place = false
-	modulate = Color("ff5c2990")
-
-func not_colliding():
-	can_place = true
-	modulate = Color("6eff297a")
 
 func _on_detection_area_area_entered(area):
 	if deployed and not current_target:

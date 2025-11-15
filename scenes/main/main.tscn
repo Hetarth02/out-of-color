@@ -40,11 +40,17 @@ offset_left = 44.0
 offset_right = -44.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="WaveCount" type="Label" parent="UI/HUD/Panel/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Wave: 1"
+
+[node name="PointCount" type="Label" parent="UI/HUD/Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Points: 0"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
