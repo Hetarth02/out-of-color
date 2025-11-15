@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c68x8t5pb6r47"]
+[gd_scene load_steps=8 format=3 uid="uid://c68x8t5pb6r47"]
 
 [ext_resource type="Script" uid="uid://djafky1a5rapm" path="res://scenes/weapons/tank.gd" id="1_mbqws"]
 [ext_resource type="Texture2D" uid="uid://con2eydohxiba" path="res://assets/weapons/turret.png" id="2_3a5d7"]
@@ -9,6 +9,16 @@ radius = 27.504545
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbqws"]
 radius = 104.75209
+
+[sub_resource type="Gradient" id="Gradient_3a5d7"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ks7d5"]
+gradient = SubResource("Gradient_3a5d7")
+fill = 1
+fill_from = Vector2(0.4871795, 0.51282054)
+fill_to = Vector2(0.85470086, 0.11111111)
 
 [node name="Tank" type="Node2D"]
 script = ExtResource("1_mbqws")
@@ -42,8 +52,8 @@ autostart = true
 visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-offset_right = 130.0
-offset_bottom = 85.0
+offset_right = 192.0
+offset_bottom = 70.0
 pivot_offset = Vector2(5, -1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
@@ -56,6 +66,10 @@ horizontal_alignment = 1
 
 [node name="BulletSelect" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/BulletSelect"]
 layout_mode = 2
@@ -89,6 +103,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Upgrade"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(3.25, 3.25)
+texture = SubResource("GradientTexture2D_ks7d5")
 
 [connection signal="input_event" from="CollisionArea" to="." method="_on_collision_area_input_event"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

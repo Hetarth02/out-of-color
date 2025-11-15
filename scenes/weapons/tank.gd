@@ -4,6 +4,7 @@ extends Node2D
 @onready var color_button: TextureButton = %ColorButton
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var panel_container: PanelContainer = $CanvasLayer/PanelContainer
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 enum Bullet {
 	RED,
@@ -49,6 +50,8 @@ var turret_level := 1
 func _ready() -> void:
 	print("ready")
 	color_button.texture_normal = bullets[Bullet.RED]
+	
+	point_light_2d.visible = Global.is_night
 
 	#color_button.icon = image
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://smvj3vn74sy"]
+[gd_scene load_steps=13 format=3 uid="uid://dxgkcb57tgd6v"]
 
 [ext_resource type="Texture2D" uid="uid://47in18t5w6a6" path="res://assets/images/menu/bg.png" id="1_qpju2"]
-[ext_resource type="Script" uid="uid://du65ofgmyqkxe" path="res://scenes/menus/main/india.gd" id="2_qiond"]
+[ext_resource type="Script" path="res://scenes/menus/main/india.gd" id="2_qiond"]
 [ext_resource type="AudioStream" uid="uid://bv3qwkioh6o5n" path="res://assets/music/bg_music.ogg" id="2_uxumf"]
-[ext_resource type="Script" uid="uid://cy565bet6hffg" path="res://scenes/menus/main/us.gd" id="4_bv6an"]
-[ext_resource type="Script" uid="uid://bgjx4nvy568c3" path="res://scenes/menus/main/europe.gd" id="5_bep8a"]
+[ext_resource type="Script" path="res://scenes/menus/main/us.gd" id="4_bv6an"]
+[ext_resource type="Script" path="res://scenes/menus/main/europe.gd" id="5_bep8a"]
 [ext_resource type="Texture2D" uid="uid://bnubhlfvony2u" path="res://assets/images/ui/ui_sheet_white.png" id="6_amjff"]
-[ext_resource type="Script" uid="uid://dohl54jo2lius" path="res://scenes/menus/main/volume.gd" id="7_634rf"]
-[ext_resource type="Script" uid="uid://cgl7rc26d4tu" path="res://scenes/menus/main/sfx.gd" id="8_n5o1u"]
+[ext_resource type="Script" path="res://scenes/menus/main/volume.gd" id="7_634rf"]
+[ext_resource type="Script" path="res://scenes/menus/main/sfx.gd" id="8_n5o1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7geb"]
 atlas = ExtResource("6_amjff")

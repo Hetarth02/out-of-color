@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://tftsjbuq8l2v"]
+[gd_scene load_steps=5 format=3 uid="uid://tftsjbuq8l2v"]
 
 [ext_resource type="Texture2D" uid="uid://bgylb6e8m23nm" path="res://icon.svg" id="1_tok0d"]
 [ext_resource type="Script" uid="uid://cxxin0tfikby6" path="res://scenes/maps/components/turret_placement.gd" id="2_0da36"]
+
+[sub_resource type="Gradient" id="Gradient_0da36"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.112, 0.864)
+colors = PackedColorArray(1, 1, 1, 1, 0.98005366, 0.98005384, 0.9800536, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hnin1"]
+gradient = SubResource("Gradient_0da36")
+fill = 1
+fill_from = Vector2(0.48290598, 0.491453)
+fill_to = Vector2(0, 1)
 
 [node name="TurretPlacement" type="TextureButton"]
 anchors_preset = -1
@@ -14,5 +26,11 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("1_tok0d")
 stretch_mode = 0
 script = ExtResource("2_0da36")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(63.333344, 63.333324)
+scale = Vector2(1.9791664, 1.9791666)
+texture = SubResource("GradientTexture2D_hnin1")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
