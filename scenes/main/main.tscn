@@ -45,3 +45,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Wave: 1"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.24948102, 0.20811182, 0.48152888, 1)
