@@ -31,7 +31,6 @@ func _ready() -> void:
 	start_wave()
 
 func start_wave() -> void:
-	Global.wave_start.emit(current_wave + 1)
 	wave_timer.stop()
 	current_wave_data.clear()
 	for enemy_data in waves[current_wave]:
@@ -40,9 +39,9 @@ func start_wave() -> void:
 		for i in count:
 			current_wave_data.push_back(enemy_type)
 	
-	print(current_wave_data)
 	current_wave_position = 0
 	enemy_timer.start()
+	Global.wave_started(current_wave + 1)
 
 func spawn_enemy() -> void:
 	if current_wave_position >= current_wave_data.size():

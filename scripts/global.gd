@@ -7,20 +7,29 @@ enum EnemyTypes {
 }
 
 signal wave_start(wave)
+signal points_update(points)
 
 var is_night: bool = false
 
 var hud: Control
-var wave_count: Label = null
 var main_node: Node2D
 var current_map: Node2D
 var selected_map: Node2D
 
-func _ready() -> void:
-	wave_start.connect(on_wave_start)
+var current_wave: int = 0
+var current_points: int = 35
 
-func on_wave_start(wave) -> void:
-	wave_count.text = "Wave: " + str(wave)
+func wave_started(wave: int) -> void:
+	current_wave = wave
+	wave_start.emit(current_wave)
+
+func add_to_points(points) -> void:
+	current_points += points
+	points_update.emit(current_points)
+
+func use_points(points) -> void:
+	current_points -= points
+	points_update.emit(current_points)
 
 func restart_current_level():
 	var currentLevelScene := load(current_map.scene_file_path)

@@ -61,7 +61,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Details"
+text = "Basic Turret"
 horizontal_alignment = 1
 
 [node name="BulletSelect" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
